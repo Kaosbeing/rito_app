@@ -88,4 +88,4 @@ typings/
 .dynamodb/
 
 # Riot API Key
-.config.js
+config.js
