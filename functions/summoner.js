@@ -36,6 +36,7 @@ export function add(summoner) {
     if (summoner == null) {
         return;
     }
+
     if (summonerExist(summoner.name)) {
         return console.log(summoner.name + " already exists !")
     } else {
@@ -68,7 +69,7 @@ export function find(name) {
 /**
  * Checks in database if summoner exists
  * @param {summonerName} name name of a summoner
- * @returns if the summoner exists in the database
+ * @returns true if the summoner exists in the database
  */
 function summonerExist(name) {
     let summonerList = JSON.parse(fs.readFileSync('./data/summoners.json'));

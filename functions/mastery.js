@@ -36,6 +36,8 @@ export async function update(id) {
 
 /**
  * [UNSTABLE I THINK] Get the best mastery from a summoner
+ * 
+ * Given the Mastery array is already sorted, the first being the best, it's pretty easy
  * @param {summonerId} id id of a ``summoner``
  * @returns best masteries of given summoner.
  */

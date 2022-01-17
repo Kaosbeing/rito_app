@@ -5,12 +5,16 @@ import * as summoner from "./functions/summoner.js";
 import * as mastery from "./functions/mastery.js";
 import * as match from "./functions/matches.js";
 
+// Array of Summoners to get datas from
 let summonerToFetch = ["Whitewolf47"];
 let fetchedSummonerData;
-for (let i = 0; i < summonerToFetch.length; i++) {
-    fetchedSummonerData = await summoner.fetchSummoner(summonerToFetch[i]);
 
+// Actual main part of the code
+for (let i = 0; i < summonerToFetch.length; i++) {
+
+    fetchedSummonerData = await summoner.fetchSummoner(summonerToFetch[i]);
     summoner.add(fetchedSummonerData);
+
     if (fetchedSummonerData != null) {
         await mastery.update(fetchedSummonerData.id);
     }
@@ -27,6 +31,10 @@ for (let i = 0; i < summonerToFetch.length; i++) {
     //console.log("Lien vers sa pp : " + getPicLinkByID(fetchedSummonerData.profileIconId));
     //console.log("=========================================================================");
 }
+
+
+
+// Some functions i had nowhere else to put 
 
 /**
  * Get the name of a champ with it's ID using champion.json DDragon database
